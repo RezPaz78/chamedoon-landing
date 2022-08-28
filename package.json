@@ -12,14 +12,6 @@
 		"prepare": "husky install",
 		"precommit": "lint-staged"
 	},
-	"lint-staged": {
-		"*.{ts,tsx}": [
-			"eslint --fix && prettier --write"
-		],
-		"*.{html,js}": [
-			"prettier --write"
-		]
-	},
 	"dependencies": {
 		"next": "12.2.5",
 		"react": "18.2.0",
