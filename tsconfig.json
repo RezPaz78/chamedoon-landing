@@ -16,19 +16,11 @@
 		"incremental": true,
 		"baseUrl": "./",
 		"paths": {
-			"@/components/*": ["./components/*"],
-			"@/validation/*": ["./validation/*"],
-			"@/utils/*": ["./utils/*"],
-			"@/assets/*": ["./assets/*"]
+			"@assets/*": ["./assets/*"],
+			"@components/*": ["./components/*"],
+			"@utils/*": ["./utils/*"]
 		}
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"**/**/*.ts",
-		"**/**/*.tsx",
-		"pages/tickets/new/index.tsط"
-	],
+	"include": ["./"],
 	"exclude": ["node_modules"]
 }
