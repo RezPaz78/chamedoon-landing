@@ -1,4 +1,4 @@
-import NavButton from "@components/NavButton";
+import NavButton from "@components/content/components/NavButton";
 import React from "react";
 import Podcast from "@assets/images/podcast.png";
 import Mosque from "@assets/images/mosque.png";

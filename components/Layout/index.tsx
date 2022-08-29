@@ -5,6 +5,7 @@ import Link from "next/link";
 import Logo from "@assets/images/logo.png";
 import { HambergerMenu } from "iconsax-react";
 import { navLinks } from "constants/navLinks";
+import Footer from "@components/Layout/components/Footer";
 
 interface ILayoutProps {
 	children: React.ReactNode;
@@ -20,6 +21,7 @@ const Layout = ({ children }: ILayoutProps) => {
 					<div dir="rtl" className="px-6 pt-20">
 						{children}
 					</div>
+					<Footer />
 				</div>
 				<div className="drawer-side">
 					<label htmlFor="drawer" className="drawer-overlay"></label>
