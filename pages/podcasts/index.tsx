@@ -1,5 +1,11 @@
+import Head from "@components/Head";
+
 const Podcasts = () => {
-	return <></>;
+	return (
+		<>
+			<Head title="پادکست‌ها" />
+		</>
+	);
 };
 
 export default Podcasts;

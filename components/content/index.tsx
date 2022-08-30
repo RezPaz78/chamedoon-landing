@@ -11,10 +11,10 @@ const Content = () => {
 		<section className="mb-4">
 			<h3 className="mb-5 font-IRANSans text-base font-bold text-white">دسته‌بندی محتوا</h3>
 			<div className="flex w-full flex-wrap items-center justify-center">
-				<NavButton text="مداحی / پادکست" link="/" icon={Podcast} />
-				<NavButton text="فیلم و مستند" link="/" icon={Play} />
-				<NavButton text="ادعیه و زیارت" link="/" icon={Mosque} />
-				<NavButton text="نقشه‌ی راه" link="/" icon={Map} />
+				<NavButton text="مداحی / پادکست" link="/podcasts" icon={Podcast} />
+				<NavButton text="فیلم و مستند" link="/films" icon={Play} />
+				<NavButton text="ادعیه و زیارت" link="/prays" icon={Mosque} />
+				<NavButton text="نقشه‌ی راه" link="/maps" icon={Map} />
 				<NavButton text="فایل‌های راهنما" link="/" icon={Folder} />
 			</div>
 		</section>

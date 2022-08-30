@@ -1,5 +1,11 @@
+import Head from "@components/Head";
+
 const Prays = () => {
-	return <></>;
+	return (
+		<>
+			<Head title="ادعیه و زیارات" />
+		</>
+	);
 };
 
 export default Prays;

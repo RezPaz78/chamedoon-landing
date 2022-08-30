@@ -1,5 +1,11 @@
+import Head from "@components/Head";
+
 const Maps = () => {
-	return <></>;
+	return (
+		<>
+			<Head title="نقشه‌ی راه" />
+		</>
+	);
 };
 
 export default Maps;
