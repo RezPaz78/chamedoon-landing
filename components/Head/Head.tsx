@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { HeadProps } from "./Head.types";
 
 const HeadComponent = (props: HeadProps) => {
-	const mainTitle = "چمدون";
+	const mainTitle = "لبیک یا حسین";
 	const [title, setTitle] = useState(mainTitle);
 
 	useEffect(() => {
