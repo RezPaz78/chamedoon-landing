@@ -2,7 +2,7 @@ import NavButton from "@components/content/components/NavButton";
 import React from "react";
 import Podcast from "@assets/images/podcast.png";
 import Mosque from "@assets/images/mosque.png";
-import Folder from "@assets/images/folder.png";
+// import Folder from "@assets/images/folder.png";
 import Map from "@assets/images/map.png";
 import Play from "@assets/images/play.png";
 
@@ -15,7 +15,7 @@ const Content = () => {
 				<NavButton text="فیلم و مستند" link="/films" icon={Play} />
 				<NavButton text="ادعیه و زیارت" link="/prays" icon={Mosque} />
 				<NavButton text="نقشه‌ی راه" link="/maps" icon={Map} />
-				<NavButton text="فایل‌های راهنما" link="/" icon={Folder} />
+				{/* <NavButton text="فایل‌های راهنما" link="/" icon={Folder} /> */}
 			</div>
 		</section>
 	);
