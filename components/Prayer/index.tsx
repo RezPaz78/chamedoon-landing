@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-interface IPrayProps {
+export interface IPrayProps {
 	link: string;
 	text: string;
 }
