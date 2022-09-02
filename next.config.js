@@ -11,7 +11,7 @@ const nextConfig = {
 		BASE_URL: process.env.BASE_URL, //read the value from env id empty use default value.
 	},
 	images: {
-		domains: ["www.placecage.com", "picsum.photos", "www.w3schools.com"],
+		domains: ["www.placecage.com", "picsum.photos", "www.w3schools.com", "37.32.28.207"],
 	},
 	output: "standalone",
 };

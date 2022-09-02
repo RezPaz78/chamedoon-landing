@@ -39,7 +39,10 @@ const Home: NextPage = () => {
 			{prayData && (
 				<section>
 					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">ادعیه و زیارات</h3>
-					<div className="flex flex-wrap items-center justify-between">
+					<div
+						className={`flex flex-wrap items-center md:justify-start ${
+							prayData.length > 1 ? "justify-center" : "justify-start"
+						}`}>
 						{prayData.map((data: IPrayResponse) => (
 							<Prayer key={data.id} link={data.link} text={data.fa_name} />
 						))}
@@ -49,7 +52,10 @@ const Home: NextPage = () => {
 			{mapData && (
 				<section>
 					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">نقشه‌ی راه</h3>
-					<div className="flex flex-wrap items-center justify-between">
+					<div
+						className={`flex flex-wrap items-center md:justify-start ${
+							mapData.length > 1 ? "justify-center" : "justify-start"
+						}`}>
 						{mapData.map((data: IMapsResponse) => (
 							<Map key={data.id} link={data.link} text={data.fa_name} />
 						))}

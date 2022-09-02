@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { queryClient } from "@utils/reactQuery.config";
 import Layout from "@components/Layout";
 import "plyr-react/plyr.css";
+
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<QueryClientProvider client={queryClient}>

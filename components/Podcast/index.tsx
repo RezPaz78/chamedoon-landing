@@ -1,6 +1,8 @@
 import AudioPlayer from "@components/AudioPlayer";
 import Downloader from "@components/Donwloader";
-
+import Image from "next/image";
+import { PlayCircle } from "iconsax-react";
+import { useEffect, useState } from "react";
 export interface IPodcastProps {
 	id: number;
 	fa_name: string;
@@ -8,17 +10,30 @@ export interface IPodcastProps {
 	type: string;
 	link: string; // for video src
 }
+
 const Podcast = ({ image, ...props }: IPodcastProps) => {
+	const [showPlayer, setShowPlayer] = useState(false);
+
+	const handleShowPlayer = () => {
+		setShowPlayer((prevState) => !prevState);
+	};
+
 	return (
 		<div className="mb-10 w-full rounded-xl font-IRANSans">
-			<div
-				style={{ backgroundImage: `url(${image})` }}
-				className="flex items-center justify-between rounded-xl bg-[#0C0C0C] object-cover  text-center hover:cursor-pointer"></div>
-			<AudioPlayer
-				style={{ "--plyr-color-main": "#EA3324" }}
-				src={props.link}
-				options={{ hideControls: true, clickToPlay: true }}
-			/>
+			<div className="relative flex items-center justify-between rounded-xl bg-[#0C0C0C] pl-3 text-center hover:cursor-pointer">
+				<Image className="" src={image} alt="film" objectFit="cover" width="100%" height="100%" />
+
+				<PlayCircle onClick={handleShowPlayer} size="30" color="#FFF" />
+			</div>
+			{showPlayer ? (
+				<AudioPlayer
+					style={{ "--plyr-color-main": "#EA3324" }}
+					src={props.link}
+					options={{ hideControls: true, clickToPlay: true }}
+				/>
+			) : (
+				<></>
+			)}
 			<Downloader fa_name={props.fa_name} link={props.link} />
 		</div>
 	);
