@@ -31,7 +31,7 @@ const Layout = ({ children }: ILayoutProps) => {
 					<label htmlFor="drawer" className="drawer-overlay"></label>
 					<div
 						dir="rtl"
-						className=" w-[70%] overflow-y-auto relative bg-[#303030] px-5 pt-3 text-white">
+						className=" relative w-[70%] overflow-y-auto bg-[#303030] px-5 pt-3 text-white">
 						<div className="mb-12 flex items-center justify-between pl-5">
 							<HambergerMenu className="rotate-90" color="white" size="35" />
 							<Image
@@ -54,7 +54,7 @@ const Layout = ({ children }: ILayoutProps) => {
 							})}
 						</div>
 						<Link href={"https://chamedoon.me/"}>
-							<footer className="flex justify-center items-center  text-center w-full absolute bottom-7 right-0 bg-[#303030]">
+							<footer className="absolute bottom-7 right-0  flex w-full items-center justify-center bg-[#303030] text-center">
 								<p className="px-2">قدرت گرفته از</p>
 								<Image src={chamedoon} alt="چمدون" />
 							</footer>

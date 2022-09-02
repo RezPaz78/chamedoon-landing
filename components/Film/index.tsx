@@ -10,7 +10,7 @@ export interface IFilmProps {
 }
 const Film = (props: IFilmProps) => {
 	return (
-		<div className="mb-10 w-full rounded-xl font-IRANSans">
+		<div className="mb-10 ml-5 w-full rounded-xl font-IRANSans ">
 			<div className="relative text-center hover:cursor-pointer">
 				<Player
 					image={props.image}

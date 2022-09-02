@@ -24,9 +24,9 @@
 	},
 	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "jsx-a11y", "import"],
 	"rules": {
-		"no-unused-vars": "error",
+		"no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",
-		"camelcase": "error",
+		"camelcase": "off",
 		"spaced-comment": "error",
 		"quotes": [
 			"error",
