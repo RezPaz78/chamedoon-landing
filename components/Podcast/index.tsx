@@ -20,8 +20,15 @@ const Podcast = ({ image, ...props }: IPodcastProps) => {
 
 	return (
 		<div className="mb-10 w-full rounded-xl font-IRANSans">
-			<div className="relative flex items-center justify-between rounded-xl bg-[#0C0C0C] pl-3 text-center hover:cursor-pointer">
-				<Image className="" src={image} alt="film" objectFit="cover" width="100%" height="100%" />
+			<div
+				className="relative flex items-center justify-end rounded-xl bg-[#0C0C0C] py-10 pl-3 text-center hover:cursor-pointer"
+				style={{
+					backgroundImage: `url(${image})`,
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "center",
+					backgroundSize: "cover",
+				}}>
+				{/* <Image className="" src={image} alt="film" objectFit="cover" width="100%" height="100%" /> */}
 
 				<PlayCircle onClick={handleShowPlayer} size="30" color="#FFF" />
 			</div>
