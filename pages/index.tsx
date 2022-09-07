@@ -53,12 +53,6 @@ const Home: NextPage = () => {
 						{mapData.map((data: IMapsResponse) => (
 							<Map key={data.id} link={data.link} text={data.fa_name} />
 						))}
-						{mapData.map((data: IMapsResponse) => (
-							<Map key={data.id} link={data.link} text={data.fa_name} />
-						))}
-						{mapData.map((data: IMapsResponse) => (
-							<Map key={data.id} link={data.link} text={data.fa_name} />
-						))}
 					</div>
 				</section>
 			)}
