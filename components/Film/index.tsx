@@ -19,7 +19,7 @@ const Film = (props: IFilmProps) => {
 					options={{ hideControls: true, clickToPlay: true }}
 				/>
 			</div>
-			<Downloader fa_name={props.fa_name} link={props.link} />
+			<Downloader type={props.type} fa_name={props.fa_name} link={props.link} />
 		</div>
 	);
 };

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 export interface IPrayProps {
 	link: string;
 	text: string;
+	image: string;
 }
 
 const Pray = (props: IPrayProps) => {
@@ -11,10 +12,14 @@ const Pray = (props: IPrayProps) => {
 	return (
 		<>
 			<button
-				className="mb-10 ml-5 h-[123px] w-[143px] rounded-xl bg-[#AD0100] px-5 font-IRANSans text-xl text-white hover:cursor-pointer"
-				onClick={() => router.push(props.link)}>
-				{props.text}
-			</button>
+				style={{
+					backgroundImage: `url(${props.image})`,
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "cover",
+					objectFit: "contain",
+				}}
+				className="mb-10  h-[100px] w-[130px] rounded-xl bg-[#AD0100] px-5 font-IRANSans text-xl text-white hover:cursor-pointer"
+				onClick={() => router.push(props.link)}></button>
 		</>
 	);
 };

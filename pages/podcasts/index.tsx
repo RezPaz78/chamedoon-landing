@@ -1,3 +1,4 @@
+import Forgotten from "@components/forgotten";
 import Head from "@components/Head";
 import Podcast, { IPodcastProps } from "@components/Podcast";
 import { usePodcastQuery } from "./query";
@@ -12,7 +13,10 @@ const Podcasts = () => {
 	const { data } = usePodcastQuery();
 	return (
 		<>
-			<Head title=">مداحی / پادکست" />
+			<Head title="مداحی / پادکست" />
+			<section>
+				<Forgotten />
+			</section>
 			{data && (
 				<section>
 					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">مداحی / پادکست</h3>
