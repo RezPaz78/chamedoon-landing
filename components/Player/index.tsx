@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Plyr, { APITypes, PlyrOptions } from "plyr-react";
+// import plyrIcons from "assets/images/plyrIcons.svg";
 
 const PlyrComponent = ({
 	src,
@@ -16,6 +17,11 @@ const PlyrComponent = ({
 }) => {
 	const ref = useRef<APITypes>(null);
 
+	const finalOptions: PlyrOptions = {
+		...options,
+		iconUrl: "/plyrIcons.svg",
+		blankVideo: "/blank.mp4",
+	};
 	const plyrVideo = src ? (
 		<Plyr
 			style={style}
@@ -29,7 +35,7 @@ const PlyrComponent = ({
 					},
 				],
 			}}
-			options={options}
+			options={finalOptions}
 		/>
 	) : null;
 
