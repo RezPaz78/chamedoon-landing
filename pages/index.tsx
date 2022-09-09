@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 				</section>
 			)}
 			<Link href={"/maps"}>
-				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+				<div className="my-5 mb-10 overflow-hidden rounded-xl">
 					<Image
 						src={guidePoster}
 						alt="maps"
@@ -71,13 +71,20 @@ const Home: NextPage = () => {
 						</Link>
 					</div>
 					{podcastData.slice(0, 3).map((data: IPodcastProps) => (
-						<Podcast key={data.id} {...data} />
+						<Podcast
+							key={data.id}
+							fa_name={data.fa_name}
+							id={data.id}
+							image={data.image}
+							link={data.link}
+							singer={data.singer}
+						/>
 					))}
 				</section>
 			)}
 
 			<Link href={"/films"}>
-				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+				<div className="my-5 mb-10 overflow-hidden rounded-xl">
 					<Image
 						src={filmsPoster}
 						alt="maps"
@@ -108,7 +115,7 @@ const Home: NextPage = () => {
 				</section>
 			)}
 
-			<div className="my-5 mb-10 rounded-xl overflow-hidden">
+			<div className="my-5 mb-10 overflow-hidden rounded-xl">
 				<Image src={emptyPoster} alt="maps" layout="responsive" objectFit="contain" className="" />
 			</div>
 
@@ -124,7 +131,7 @@ const Home: NextPage = () => {
 							</a>
 						</Link>
 					</div>
-					<div className={`flex flex-wrap items-center justify-center md:justify-start`}>
+					<div className={` flex flex-wrap items-center justify-between`}>
 						{mapData.map((data: IMapsResponse) => (
 							<Map key={data.id} link={data.link} image={data.image} text={data.fa_name} />
 						))}
@@ -132,7 +139,7 @@ const Home: NextPage = () => {
 				</section>
 			)}
 			<Link href={"https://chamedoon.me/"}>
-				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+				<div className="my-5 mb-10 overflow-hidden rounded-xl">
 					<Image
 						src={chamedoonPoster}
 						alt="maps"

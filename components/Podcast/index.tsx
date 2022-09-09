@@ -12,7 +12,7 @@ export interface IPodcastProps {
 	link: string; // for video src
 }
 
-const Podcast = ({ image, ...props }: IPodcastProps) => {
+const Podcast = ({ ...props }: IPodcastProps) => {
 	const [showPlayer, setShowPlayer] = useState(false);
 
 	const handleShowPlayer = () => {
@@ -22,15 +22,27 @@ const Podcast = ({ image, ...props }: IPodcastProps) => {
 	return (
 		<div className="mb-10 w-full rounded-xl font-IRANSans ">
 			<div
-				className="relative flex items-center  justify-between pl-4 rounded-t-xl bg-[#0C0C0C] text-center hover:cursor-pointer"
+				className="relative flex items-center  justify-between rounded-t-xl bg-[#0C0C0C] pl-4 text-center hover:cursor-pointer"
 				onClick={handleShowPlayer}>
-				<Image src={image} alt={props.fa_name} objectFit="scale-down" height="100%" width="100%" />
+				<div
+					style={{
+						backgroundImage: `url(${props.image})`,
+						backgroundRepeat: "no-repeat",
+						backgroundSize: "cover",
+						objectFit: "contain",
+					}}
+					className="  h-[100px] w-[130px]  bg-[#AD0100]"
+				/>
 
 				{!showPlayer && <PlayCircle size="30" color="#FFF" />}
 			</div>
 			{showPlayer ? (
 				<AudioPlayer
-					style={{ "--plyr-color-main": "#EA3324" }}
+					style={{
+						"--plyr-color-main": "#EA3324",
+						"--plyr-audio-controls-background": "#141414",
+						"--plyr-audio-control-color": "#fff",
+					}}
 					src={props.link}
 					options={{ hideControls: true, clickToPlay: true }}
 					className="bg-black"

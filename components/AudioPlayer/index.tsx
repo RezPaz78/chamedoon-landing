@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import Plyr, { APITypes, PlyrOptions } from "plyr-react";
+import { APITypes, PlyrOptions } from "plyr-react";
+import AdvancedPlayer from "components/Player/AdvancedPlayer";
 
 const PlyrComponent = ({
 	src,
@@ -15,7 +16,7 @@ const PlyrComponent = ({
 	const ref = useRef<APITypes>(null);
 
 	const plyrVideo = src ? (
-		<Plyr
+		<AdvancedPlayer
 			style={style}
 			ref={ref}
 			source={{

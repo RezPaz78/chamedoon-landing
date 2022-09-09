@@ -6,6 +6,10 @@ import { queryClient } from "@utils/reactQuery.config";
 import Layout from "@components/Layout";
 import "plyr-react/plyr.css";
 
+// toast
+import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<QueryClientProvider client={queryClient}>
@@ -13,6 +17,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
+				<ToastContainer
+					position="bottom-left"
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop
+					closeOnClick
+					rtl
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="colored"
+					bodyClassName="font-Estedad text-sm"
+					transition={Slide}
+				/>
 				<ReactQueryDevtools initialIsOpen={false} />
 			</Hydrate>
 		</QueryClientProvider>
