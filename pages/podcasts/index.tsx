@@ -22,7 +22,14 @@ const Podcasts = () => {
 					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">مداحی / پادکست</h3>
 
 					{data.map((data: IPodcastProps) => (
-						<Podcast key={data.id} {...data} />
+						<Podcast
+							key={data.id}
+							fa_name={data.fa_name}
+							id={data.id}
+							image={data.image}
+							link={data.link}
+							singer={data.singer}
+						/>
 					))}
 				</section>
 			)}

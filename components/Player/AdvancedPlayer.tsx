@@ -15,9 +15,32 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 		if (current.plyr.source === null) {
 			return;
 		}
-
+		localStorage.setItem("players", "{}");
 		const api = current.plyr;
-		// api.on("ready", () => console.log("I'm ready"));
+
+		// });
+		api.on("playing", (e: any) => {
+			const players = JSON.parse(localStorage.getItem("players") ?? "{}");
+			const current = e.detail.plyr.id;
+			players[current] = true;
+
+			const playerList = document.getElementsByClassName("plyr");
+
+			for (let i = 0; i < playerList.length; i++) {
+				if (playerList[i] !== e.target) {
+					// pause audio or video
+					playerList[i].querySelector("video")?.pause();
+					playerList[i].querySelector("audio")?.pause();
+				}
+			}
+
+			for (const key in players) {
+				if (Number(key) !== Number(current)) {
+					players[key] = false;
+				}
+			}
+			localStorage.setItem("players", JSON.stringify(players));
+		});
 	});
 	return (
 		// eslint-disable-next-line jsx-a11y/media-has-caption

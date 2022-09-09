@@ -12,14 +12,14 @@ const Downloader = (props: IDownloaderProps) => {
 	const extension = props.link.split(".").pop();
 
 	return (
-		<div className="flex text-[#EA3324] w-full items-center justify-between rounded-b-xl bg-[#141414] px-5 py-3">
+		<div className="flex w-full items-center justify-between rounded-b-xl bg-[#141414] px-5 py-3 text-[#EA3324]">
 			<h4 className="text-sm font-normal text-[#EA3324]">
 				<p className="text-sm">{props.fa_name}</p>
 				<p className="text-2xs  text-white">{props?.type ?? props.singer}</p>
 			</h4>
 			<div
 				className={`flex items-center justify-center ${
-					percentage ? "cursor-wait" : "pb-1 border-b cursor-pointer border-[#EA3324]"
+					percentage ? "cursor-wait" : "cursor-pointer border-b border-[#EA3324] pb-1"
 				}`}>
 				{percentage ? (
 					<p>{percentage} %</p>
