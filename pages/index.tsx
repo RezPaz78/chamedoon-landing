@@ -9,53 +9,139 @@ import { useFilmQuery } from "./films/query";
 import { IPrayResponse, usePrayersQuery } from "./prays/query";
 import { IMapsResponse, useMapsQuery } from "./maps/query";
 import { usePodcastQuery } from "./podcasts/query";
+import Forgotten from "@components/forgotten";
+import Link from "next/link";
+import Image from "next/image";
+import filmsPoster from "@assets/images/filmsPoster.png";
+import emptyPoster from "@assets/images/emptyPoster.png";
+import guidePoster from "@assets/images/guidePoster.png";
+import chamedoonPoster from "@assets/images/chamedoonPoster.png";
 
 const Home: NextPage = () => {
 	const { data: filmData } = useFilmQuery();
 	const { data: prayData } = usePrayersQuery();
 	const { data: mapData } = useMapsQuery();
 	const { data: podcastData } = usePodcastQuery();
+
 	return (
 		<>
 			<Head />
 			<Content />
+			<section>
+				<Forgotten />
+			</section>
 			{filmData && (
 				<section>
-					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">فیلم و مستند</h3>
-					{filmData.map((film: IFilmProps) => (
+					<div className="flex justify-between">
+						<h3 className="mb-5 font-IRANSans text-base font-medium text-white">فیلم و مستند</h3>
+						<Link href={"/films"}>
+							<a>
+								<h3 className="mb-5 font-IRANSans text-base font-medium text-[#EF3837]">
+									مشاهده همه
+								</h3>
+							</a>
+						</Link>
+					</div>
+					{filmData.slice(0, 3).map((film: IFilmProps) => (
 						<Film key={film.id} {...film} />
 					))}
 				</section>
 			)}
+			<Link href={"/maps"}>
+				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+					<Image
+						src={guidePoster}
+						alt="maps"
+						layout="responsive"
+						objectFit="contain"
+						className=""
+					/>
+				</div>
+			</Link>
 			{podcastData && (
 				<section>
-					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">مداحی / پادکست</h3>
-
-					{podcastData.map((data: IPodcastProps) => (
+					<div className="flex justify-between">
+						<h3 className="mb-5 font-IRANSans text-base font-medium text-white">مداحی / پادکست</h3>
+						<Link href={"/podcasts"}>
+							<a>
+								<h3 className="mb-5 font-IRANSans text-base font-medium text-[#EF3837]">
+									مشاهده همه
+								</h3>
+							</a>
+						</Link>
+					</div>
+					{podcastData.slice(0, 3).map((data: IPodcastProps) => (
 						<Podcast key={data.id} {...data} />
 					))}
 				</section>
 			)}
+
+			<Link href={"/films"}>
+				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+					<Image
+						src={filmsPoster}
+						alt="maps"
+						layout="responsive"
+						objectFit="contain"
+						className=""
+					/>
+				</div>
+			</Link>
+
 			{prayData && (
 				<section>
-					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">ادعیه و زیارات</h3>
-					<div className={`flex flex-wrap items-center justify-center md:justify-start`}>
+					<div className="flex justify-between">
+						<h3 className="mb-5 font-IRANSans text-base font-medium text-white">ادعیه و زیارات</h3>
+						<Link href={"/prays"}>
+							<a>
+								<h3 className="mb-5 font-IRANSans text-base font-medium text-[#EF3837]">
+									مشاهده همه
+								</h3>
+							</a>
+						</Link>
+					</div>
+					<div className={` flex flex-wrap items-center justify-between`}>
 						{prayData.map((data: IPrayResponse) => (
-							<Prayer key={data.id} link={data.link} text={data.fa_name} />
+							<Prayer key={data.id} link={data.link} image={data.image} text={data.fa_name} />
 						))}
 					</div>
 				</section>
 			)}
+
+			<div className="my-5 mb-10 rounded-xl overflow-hidden">
+				<Image src={emptyPoster} alt="maps" layout="responsive" objectFit="contain" className="" />
+			</div>
+
 			{mapData && (
 				<section>
-					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">نقشه‌ی راه</h3>
+					<div className="flex justify-between">
+						<h3 className="mb-5 font-IRANSans text-base font-medium text-white">نقشه‌ی راه</h3>
+						<Link href={"/maps"}>
+							<a>
+								<h3 className="mb-5 font-IRANSans text-base font-medium text-[#EF3837]">
+									مشاهده همه
+								</h3>
+							</a>
+						</Link>
+					</div>
 					<div className={`flex flex-wrap items-center justify-center md:justify-start`}>
 						{mapData.map((data: IMapsResponse) => (
-							<Map key={data.id} link={data.link} text={data.fa_name} />
+							<Map key={data.id} link={data.link} image={data.image} text={data.fa_name} />
 						))}
 					</div>
 				</section>
 			)}
+			<Link href={"https://chamedoon.me/"}>
+				<div className="my-5 mb-10 rounded-xl overflow-hidden">
+					<Image
+						src={chamedoonPoster}
+						alt="maps"
+						layout="responsive"
+						objectFit="contain"
+						className=""
+					/>
+				</div>
+			</Link>
 		</>
 	);
 };

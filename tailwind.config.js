@@ -5,6 +5,7 @@ module.exports = {
 		extend: {},
 		fontFamily: {
 			IRANSans: ["IRANSans"],
+			Ahang: ["Ahang"],
 		},
 	},
 	plugins: [require("daisyui")],

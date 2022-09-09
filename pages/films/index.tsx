@@ -1,4 +1,5 @@
 import Film, { IFilmProps } from "@components/Film";
+import Forgotten from "@components/forgotten";
 import Head from "@components/Head";
 import { useFilmQuery } from "./query";
 
@@ -8,6 +9,9 @@ const Films = () => {
 	return (
 		<>
 			<Head title="فیلم و مستند" />
+			<section>
+				<Forgotten />
+			</section>
 			<section className="">
 				<h3 className="mb-5 font-IRANSans text-base font-medium text-white">فیلم و مستند</h3>
 				{data && data.map((film: IFilmProps) => <Film key={film.id} {...film} />)}
