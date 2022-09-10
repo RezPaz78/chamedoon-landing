@@ -14,6 +14,12 @@ const PlyrComponent = ({
 	style: { [key: string]: string | number };
 }) => {
 	const ref = useRef<APITypes>(null);
+	const finalOptions: PlyrOptions = {
+		...options,
+		iconUrl: "/plyrIcons.svg",
+		blankVideo: "/blank.mp4",
+		autopause: true,
+	};
 
 	const plyrVideo = src ? (
 		<AdvancedPlayer
@@ -27,7 +33,7 @@ const PlyrComponent = ({
 					},
 				],
 			}}
-			options={options}
+			options={finalOptions}
 		/>
 	) : null;
 
