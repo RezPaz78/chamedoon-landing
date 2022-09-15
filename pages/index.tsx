@@ -13,7 +13,7 @@ import Image from "next/image";
 const Home: NextPage = () => {
 	return (
 		<>
-			<Head />
+			<Head title="اصفهان" />
 			<Content />
 			<section>
 				<Forgotten />
