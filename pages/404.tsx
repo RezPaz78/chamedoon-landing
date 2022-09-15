@@ -6,7 +6,7 @@ const NotFound: NextPage = () => {
 	const router = useRouter();
 	useEffect(() => {
 		if (router && router.query) {
-			router.push("/login");
+			router.push("/");
 		}
 	}, [router]);
 	return <Fragment></Fragment>;
