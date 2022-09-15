@@ -1,36 +1,20 @@
-import Content from "@components/content";
-import Film, { IFilmProps } from "@components/Film";
+// import Content from "@components/content";
 import Head from "@components/Head";
-import Prayer from "@components/Prayer";
-import Map from "@components/Map";
 import type { NextPage } from "next";
-import Podcast, { IPodcastProps } from "@components/Podcast";
-
-import Forgotten from "@components/forgotten";
 import Link from "next/link";
 import Image from "next/image";
+import dummyFilm from "assets/images/dummyFilm.png";
 
 const Home: NextPage = () => {
 	return (
 		<>
 			<Head title="اصفهان" />
-			<Content />
-			<section>
-				<Forgotten />
-			</section>
-
-			<section>
-				<div className="flex justify-between">
-					<h3 className="mb-5 font-IRANSans text-base font-medium text-white">فیلم و مستند</h3>
-					<Link href={"/films"}>
-						<a>
-							<h3 className="mb-5 font-IRANSans text-base font-medium text-[#EF3837]">
-								مشاهده همه
-							</h3>
-						</a>
-					</Link>
+			<section id="top-slider " className="flex items-center justify-center p-5">
+				<div className="relative aspect-video w-10/12  justify-center rounded-xl bg-purple-300">
+					<Image alt="movies" src={dummyFilm} layout="fill" objectFit="cover" quality={100} />
 				</div>
 			</section>
+			{/* <Content /> */}
 		</>
 	);
 };
