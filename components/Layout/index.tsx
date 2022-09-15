@@ -19,10 +19,11 @@ const Layout = ({ children }: ILayoutProps) => {
 	return (
 		<>
 			<Nav />
-			{/* <div dir="rtl" className="container columns-1 ">
+			<div dir="rtl" className="container  ">
 				<div>{children}</div>
+
 				<Footer />
-			</div> */}
+			</div>
 		</>
 	);
 };
