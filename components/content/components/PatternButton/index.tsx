@@ -13,7 +13,7 @@ const PatternButton = (props: INavButtonProps) => {
 		<Link href={props.link}>
 			<a
 				style={{ backgroundImage: "url(/BtnPattern.svg)" }}
-				className={` m-2 flex items-center justify-between rounded-lg bg-[#444444]  p-3  font-bold text-[#FFCB05] ${props.className}`}>
+				className={` m-2 flex items-center justify-between rounded-lg bg-[#444444]  p-3  font-bold text-chamedoon ${props.className}`}>
 				<span className=" font-IRANSans text-xs font-normal ">{props.text}</span>
 				<props.icon variant="Bold" />
 			</a>

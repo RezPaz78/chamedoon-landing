@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import dummyFilm from "assets/images/dummyFilm.png";
+import LatestMovies from "@components/LatestMovies";
 
 const Home: NextPage = () => {
 	return (
@@ -22,6 +23,9 @@ const Home: NextPage = () => {
 				</div>
 			</section>
 			<Content className="" />
+			<section id="movies" className="flex flex-col items-start p-5">
+				<LatestMovies />
+			</section>
 		</>
 	);
 };
