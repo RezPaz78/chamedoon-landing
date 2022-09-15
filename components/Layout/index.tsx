@@ -19,7 +19,7 @@ const Layout = ({ children }: ILayoutProps) => {
 	return (
 		<>
 			<Nav />
-			<div dir="rtl" className="container">
+			<div dir="rtl" className="containermin-h-screen">
 				<div>{children}</div>
 
 				<Footer />
