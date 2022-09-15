@@ -1,21 +1,38 @@
-import NavButton from "@components/content/components/NavButton";
-import React from "react";
-import Podcast from "@assets/images/podcast.png";
-import Mosque from "@assets/images/mosque.png";
-// import Folder from "@assets/images/folder.png";
-import Map from "@assets/images/map.png";
-import Play from "@assets/images/play.png";
+import PatternButton from "./components/PatternButton";
+import { VideoHorizontal, VoiceCricle, Bus, Calendar } from "iconsax-react";
 
-const Content = () => {
+interface IContentProps {
+	className: string;
+}
+
+const Content = (props: IContentProps) => {
 	return (
-		<section className="mb-4">
-			<h3 className="mb-5 font-IRANSans text-base font-bold text-white">دسته‌بندی محتوا</h3>
-			<div className="flex w-full flex-wrap items-center justify-center">
-				<NavButton text="مداحی / پادکست" link="/podcasts" icon={Podcast} />
-				<NavButton text="فیلم و مستند" link="/films" icon={Play} />
-				<NavButton text="ادعیه و زیارت" link="/prays" icon={Mosque} />
-				<NavButton text="نقشه‌ی راه" link="/maps" icon={Map} />
-				{/* <NavButton text="فایل‌های راهنما" link="/" icon={Folder} /> */}
+		<section className={`${props.className} flex  items-center justify-center `}>
+			<div className="flex w-11/12 flex-wrap items-center justify-between ">
+				<PatternButton
+					className="box-border min-w-[130px]  max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
+					icon={VideoHorizontal}
+					link="#Beautiful_Isfahan"
+					text="اصفهان زیبا"
+				/>
+				<PatternButton
+					className="box-border min-w-[130px] max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
+					icon={VoiceCricle}
+					link="#Isfahan_Voice"
+					text="صدای شهر"
+				/>
+				<PatternButton
+					className="box-border min-w-[130px] max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
+					icon={Bus}
+					link="#top-slider"
+					text="مسیر اتوبوس‌ها"
+				/>
+				<PatternButton
+					className="box-border min-w-[130px] max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
+					icon={Calendar}
+					link="#city_events"
+					text="رویدادهای شهر"
+				/>
 			</div>
 		</section>
 	);
