@@ -1,21 +1,33 @@
-import NavButton from "@components/content/components/NavButton";
-import React from "react";
-import Podcast from "@assets/images/podcast.png";
-import Mosque from "@assets/images/mosque.png";
-// import Folder from "@assets/images/folder.png";
-import Map from "@assets/images/map.png";
-import Play from "@assets/images/play.png";
+import PatternButton from "./components/PatternButton";
+import { VideoHorizontal, VoiceCricle, Bus, Calendar } from "iconsax-react";
 
-const Content = () => {
+interface IContentProps {
+	className: string;
+}
+
+const Content = (props: IContentProps) => {
 	return (
-		<section className="mb-4">
-			<h3 className="mb-5 font-IRANSans text-base font-bold text-white">دسته‌بندی محتوا</h3>
+		<section className={`${props.className} flex  items-center justify-center `}>
 			<div className="flex w-full flex-wrap items-center justify-center">
-				<NavButton text="مداحی / پادکست" link="/podcasts" icon={Podcast} />
-				<NavButton text="فیلم و مستند" link="/films" icon={Play} />
-				<NavButton text="ادعیه و زیارت" link="/prays" icon={Mosque} />
-				<NavButton text="نقشه‌ی راه" link="/maps" icon={Map} />
-				{/* <NavButton text="فایل‌های راهنما" link="/" icon={Folder} /> */}
+				<PatternButton
+					className="basis-5/12"
+					icon={VideoHorizontal}
+					link="#top-slider"
+					text="اصفهان زیبا"
+				/>
+				<PatternButton
+					className="basis-5/12"
+					icon={VoiceCricle}
+					link="#top-slider"
+					text="صدای شهر"
+				/>
+				<PatternButton className="basis-5/12" icon={Bus} link="#top-slider" text="مسیر اتوبوس‌ها" />
+				<PatternButton
+					className="basis-5/12"
+					icon={Calendar}
+					link="#top-slider"
+					text="رویدادهای شهر"
+				/>
 			</div>
 		</section>
 	);
