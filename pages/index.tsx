@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dummyFilm from "assets/images/dummyFilm.png";
 import LatestMovies from "@components/LatestMovies";
+import Playlists from "@components/Playlists";
 import IsfBeauty from "@components/Isfahan/IsfahanBeauty";
 
 const Home: NextPage = () => {
@@ -29,6 +30,9 @@ const Home: NextPage = () => {
 			</section>
 			<section id="Beautiful_Isfahan" className="flex flex-col items-start bg-secondary">
 				<IsfBeauty />
+			</section>
+			<section id="playlists" className="flex flex-col items-start p-5 pt-12">
+				<Playlists />
 			</section>
 		</>
 	);
