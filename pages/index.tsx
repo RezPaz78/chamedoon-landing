@@ -6,7 +6,7 @@ import Image from "next/image";
 import dummyFilm from "assets/images/dummyFilm.png";
 import LatestMovies from "@components/LatestMovies";
 import Playlists from "@components/Playlists";
-import IsfBeauty from "@components/Isfahan/IsfahanBeauty";
+import IsfBeauty from "@components/Isfahan/Beauty";
 
 const Home: NextPage = () => {
 	return (
