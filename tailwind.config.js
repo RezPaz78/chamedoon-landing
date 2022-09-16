@@ -7,6 +7,9 @@ module.exports = {
 				chamedoon: {
 					DEFAULT: "#FFCB05",
 				},
+				secondary: {
+					DEFAULT: "#444444",
+				},
 				brown: {
 					50: "#fdf8f6",
 					100: "#f2e8e5",

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dummyFilm from "assets/images/dummyFilm.png";
 import LatestMovies from "@components/LatestMovies";
+import IsfBeauty from "@components/Isfahan/IsfahanBeauty";
 
 const Home: NextPage = () => {
 	return (
@@ -25,6 +26,9 @@ const Home: NextPage = () => {
 			<Content className="" />
 			<section id="movies" className="flex flex-col items-start p-5">
 				<LatestMovies />
+			</section>
+			<section id="Beautiful_Isfahan" className="flex flex-col items-start bg-secondary">
+				<IsfBeauty />
 			</section>
 		</>
 	);
