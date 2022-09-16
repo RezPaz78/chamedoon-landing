@@ -1,4 +1,4 @@
-import ISFDummy1 from "assets/images/ISFDummy1.png";
+import voiceDummy from "assets/images/voiceDummy.png";
 import Image from "next/image";
 import { Play, VideoCircle, VideoHorizontal } from "iconsax-react";
 import Pattern from "assets/Icons/Pattern.svg";
@@ -19,29 +19,14 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 					<Image
 						placeholder="blur"
 						alt="movies"
-						src={ISFDummy1}
+						src={voiceDummy}
 						layout="fill"
 						objectFit="fill"
 						quality={100}
 					/>
 					<VideoCircle
 						variant="Bulk"
-						className=" absolute top-1/4 left-1/4 h-1/2 w-1/2  text-black [&>path+path]:text-chamedoon"
-					/>
-				</div>
-				{/* a single Movie or Item */}
-				<div className="relative mt-5 aspect-square w-1/2   items-center justify-center rounded-lg  shadow-lg  [&>*]:rounded-lg ">
-					<Image
-						placeholder="blur"
-						alt="movies"
-						src={ISFDummy1}
-						layout="fill"
-						objectFit="fill"
-						quality={100}
-					/>
-					<VideoCircle
-						variant="Bulk"
-						className=" absolute top-1/4 left-1/4 h-1/2 w-1/2  text-black [&>path+path]:text-chamedoon"
+						className=" absolute left-4 bottom-2 h-fit w-5/12 text-black [&>path+path]:text-chamedoon"
 					/>
 				</div>
 

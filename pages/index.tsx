@@ -7,6 +7,7 @@ import dummyFilm from "assets/images/dummyFilm.png";
 import LatestMovies from "@components/LatestMovies";
 import Playlists from "@components/Playlists";
 import IsfBeauty from "@components/Isfahan/Beauty";
+import IsfVoice from "@components/Isfahan/Voice";
 
 const Home: NextPage = () => {
 	return (
@@ -33,6 +34,9 @@ const Home: NextPage = () => {
 			</section>
 			<section id="playlists" className="flex flex-col items-start p-5 pt-12">
 				<Playlists />
+			</section>
+			<section id="Beautiful_Isfahan" className="flex flex-col items-start bg-secondary">
+				<IsfVoice />
 			</section>
 		</>
 	);
