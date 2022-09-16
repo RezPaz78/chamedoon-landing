@@ -12,7 +12,7 @@ const LatestMovies = (/* props: ILatestMoviesProps */) => {
 				<p className=" font-IRANSans text-base font-bold text-white ">جدیدترین فیلم‌ها</p>
 			</h3>
 			{/* a single Movie or Item */}
-			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl ">
+			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl [&>*]:rounded-lg ">
 				<Image
 					placeholder="blur"
 					alt="movies"
@@ -22,7 +22,7 @@ const LatestMovies = (/* props: ILatestMoviesProps */) => {
 					quality={100}
 				/>
 			</div>
-			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl ">
+			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl [&>*]:rounded-lg  ">
 				<Image
 					placeholder="blur"
 					alt="movies"
@@ -32,7 +32,7 @@ const LatestMovies = (/* props: ILatestMoviesProps */) => {
 					quality={100}
 				/>
 			</div>
-			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl ">
+			<div className="relative mt-5 box-border aspect-video w-3/4 justify-center rounded-xl [&>*]:rounded-lg  ">
 				<Image
 					placeholder="blur"
 					alt="movies"
