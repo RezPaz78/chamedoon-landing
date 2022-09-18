@@ -60,8 +60,8 @@ const Slider = (/* props: ISliderProps */) => {
 			)} */}
 			<Swiper
 				className="w-full "
-				slidesPerView={1.1}
-				spaceBetween={5}
+				slidesPerView={1.15}
+				spaceBetween={10}
 				centeredSlides={true}
 				centeredSlidesBounds
 				loop={true}
