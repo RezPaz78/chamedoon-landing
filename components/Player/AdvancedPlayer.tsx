@@ -12,7 +12,7 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 		 * you can create the ref inside the component by yourself
 		 */
 		const { current } = ref as React.MutableRefObject<APITypes>;
-		if (current.plyr.source === null) {
+		if (current?.plyr?.source === null) {
 			return;
 		}
 		localStorage.setItem("players", "{}");
@@ -42,6 +42,21 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 			}
 			localStorage.setItem("players", JSON.stringify(players));
 			currentPlayer.fullscreen.enter();
+		});
+
+		// player style for fullscreen
+		const poster = document.querySelector<HTMLElement>(".plyr__poster");
+		api.on("exitfullscreen", (e) => {
+			const player = e.detail.plyr;
+			player.pause();
+			player.toggleControls(false);
+			poster && poster.style.setProperty("opacity", "1");
+			player.stop();
+		});
+		api.on("enterfullscreen", (e) => {
+			poster && poster.style.setProperty("opacity", "0");
+			const player = e.detail.plyr;
+			player.toggleControls(true);
 		});
 	});
 	return (

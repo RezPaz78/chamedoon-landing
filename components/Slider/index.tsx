@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { MovieAds } from "@components/Ads";
 import PlyrComponent from "@components/Player";
+import SliderPlayer from "@components/Player/SliderPlayer";
 // export interface ISliderProps {
 
 // }
@@ -53,11 +54,7 @@ const Slider = (/* props: ISliderProps */) => {
 						<SwiperSlide key={item.id}>
 							{item.type === "Ad" && <MovieAds src={item.link} />}
 							{item.type === "Video" && item.link && (
-								<PlyrComponent
-									image={item.image}
-									src={item.link}
-									style={{ "--plyr-color-main": "#FFCB05" }}
-								/>
+								<SliderPlayer image={item.image} src={item.link} />
 							)}
 						</SwiperSlide>
 					))}

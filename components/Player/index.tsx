@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { APITypes, PlyrOptions } from "plyr-react";
+import { useEffect, useRef } from "react";
+import { APITypes, PlyrOptions, usePlyr } from "plyr-react";
 import AdvancedPlayer from "./AdvancedPlayer";
 const PlyrComponent = ({
 	src,
@@ -22,12 +22,10 @@ const PlyrComponent = ({
 		blankVideo: "/blank.mp4",
 		autopause: true,
 		fullscreen: { enabled: true, fallback: true, iosNative: false },
+		clickToPlay: true,
+		autoplay: true,
 	};
-	console.log(
-		`%c ref. =>`,
-		"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
-		ref.current,
-	);
+
 	const plyrVideo = src ? (
 		<AdvancedPlayer
 			style={style}
