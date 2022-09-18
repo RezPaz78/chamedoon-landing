@@ -24,7 +24,8 @@
 		"react-dom": "18.2.0",
 		"react-toastify": "^9.0.8",
 		"react-use-downloader": "^1.1.7",
-		"sass": "^1.54.5"
+		"sass": "^1.54.5",
+		"swiper": "^8.4.2"
 	},
 	"devDependencies": {
 		"@svgr/webpack": "^6.3.1",

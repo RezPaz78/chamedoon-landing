@@ -9,22 +9,14 @@ import Playlists from "@components/Playlists";
 import IsfBeauty from "@components/Isfahan/Beauty";
 import IsfVoice from "@components/Isfahan/Voice";
 import Podcasts from "@components/Podcasts";
+import Slider from "@components/Slider";
 
 const Home: NextPage = () => {
 	return (
 		<>
 			<Head title="اصفهان" />
-			<section id="top-slider" className="flex items-center justify-center p-5">
-				<div className="relative aspect-video w-full  justify-center rounded-xl ">
-					<Image
-						placeholder="blur"
-						alt="movies"
-						src={dummyFilm}
-						layout="fill"
-						objectFit="cover"
-						quality={100}
-					/>
-				</div>
+			<section id="top-slider" className="flex items-center justify-center py-5">
+				<Slider />
 			</section>
 			<Content className="" />
 			<section id="movies" className="flex flex-col items-start p-5">

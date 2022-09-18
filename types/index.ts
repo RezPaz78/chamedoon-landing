@@ -57,3 +57,11 @@ export interface ISFEvent {
 	date: string;
 	location: string;
 }
+
+// base response
+export interface IBaseResponse<T> {
+	message: string;
+	data: T[];
+}
+
+export type ISliderResponse = IBaseResponse<ISlider>;
