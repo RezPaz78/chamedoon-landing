@@ -1,4 +1,4 @@
-import { APITypes, PlyrProps, usePlyr } from "plyr-react";
+import { APITypes, PlyrInstance, PlyrProps, usePlyr } from "plyr-react";
 import { forwardRef, useEffect } from "react";
 const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 	const { source, options = null } = props;
@@ -20,6 +20,7 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 
 		// });
 		api.on("playing", (e: any) => {
+			const currentPlayer = e.detail.plyr as PlyrInstance;
 			const players = JSON.parse(localStorage.getItem("players") ?? "{}");
 			const current = e.detail.plyr.id;
 			players[current] = true;
@@ -40,6 +41,7 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 				}
 			}
 			localStorage.setItem("players", JSON.stringify(players));
+			currentPlayer.fullscreen.enter();
 		});
 	});
 	return (

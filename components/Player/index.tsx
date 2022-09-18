@@ -21,7 +21,13 @@ const PlyrComponent = ({
 		iconUrl: "/plyrIcons.svg",
 		blankVideo: "/blank.mp4",
 		autopause: true,
+		fullscreen: { enabled: true, fallback: true, iosNative: false },
 	};
+	console.log(
+		`%c ref. =>`,
+		"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
+		ref.current,
+	);
 	const plyrVideo = src ? (
 		<AdvancedPlayer
 			style={style}
@@ -40,7 +46,7 @@ const PlyrComponent = ({
 		/>
 	) : null;
 
-	return <div className="[&>*]:rounded-t-xl">{plyrVideo}</div>;
+	return <div className="[&>*]:rounded-xl">{plyrVideo}</div>;
 };
 
 export default PlyrComponent;
