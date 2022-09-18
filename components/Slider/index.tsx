@@ -5,6 +5,7 @@ import { useSliderQuery } from "./api";
 import { useEffect } from "react";
 // / Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import { MovieAds } from "@components/Ads";
 // export interface ISliderProps {
 
@@ -59,7 +60,9 @@ const Slider = (/* props: ISliderProps */) => {
 				"مشکلی پیش آمده است"
 			)} */}
 			<Swiper
+				modules={[Autoplay]}
 				className="w-full "
+				autoplay={{ delay: 2000 }}
 				slidesPerView={1.15}
 				spaceBetween={10}
 				centeredSlides={true}

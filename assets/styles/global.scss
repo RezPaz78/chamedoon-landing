@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @import "./fonts.scss";
-@import "swiper/css";
+@import "swiper/css/bundle";
+
 * {
 	padding: 0;
 	margin: 0;
