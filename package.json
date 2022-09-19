@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^4.2.3",
-		"@tanstack/react-query-devtools": "^4.2.3",
+		"@tanstack/react-query-devtools": "^4.3.9",
 		"axios": "^0.27.2",
 		"daisyui": "^2.24.0",
 		"iconsax-react": "^0.0.8",

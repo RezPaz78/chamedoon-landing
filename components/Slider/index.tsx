@@ -39,20 +39,17 @@ const Slider = (/* props: ISliderProps */) => {
 				<Loading />
 			) : data ? (
 				<Swiper
-					modules={[Autoplay, Mousewheel, Scrollbar]}
-					mousewheel={true}
-					grabCursor={true}
-					cssMode={true}
+					modules={[Autoplay]}
 					className="w-full "
-					autoplay={{ delay: 2000 }}
-					slidesPerView={1.15}
+					autoplay={{ delay: 3000 }}
+					slidesPerView={1.2}
 					spaceBetween={10}
 					centeredSlides={true}
-					centeredSlidesBounds
 					loop={true}
-					onLoopFix={() => console.log("loop fix")}
-					onSlideChange={() => console.log("slide change")}
-					onSwiper={(swiper) => console.log(swiper)}>
+					// onLoopFix={() => console.log("loop fix")}
+					// onSlideChange={() => console.log("slide change")}
+					// onSwiper={(swiper) => console.log(swiper)}
+				>
 					{data.map((item) => (
 						<SwiperSlide key={item.id}>
 							{item.type === "Ad" && <MovieAds src={item.link} />}

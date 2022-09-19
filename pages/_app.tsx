@@ -9,6 +9,8 @@ import "plyr-react/plyr.css";
 // toast
 import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MusicProvider } from "context/musicPlayer";
+import AudioPlayer from "@components/AudioPlayer";
 
 //   // import Swiper styles
 
@@ -16,24 +18,28 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Hydrate state={pageProps.dehydratedState}>
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-				<ToastContainer
-					position="bottom-left"
-					autoClose={5000}
-					hideProgressBar={false}
-					newestOnTop
-					closeOnClick
-					rtl
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-					theme="colored"
-					bodyClassName="font-Estedad text-sm"
-					transition={Slide}
-				/>
-				<ReactQueryDevtools initialIsOpen={false} />
+				<MusicProvider>
+					<>
+						<Layout>
+							<Component {...pageProps} />
+						</Layout>
+						<ToastContainer
+							position="bottom-left"
+							autoClose={5000}
+							hideProgressBar={false}
+							newestOnTop
+							closeOnClick
+							rtl
+							pauseOnFocusLoss
+							draggable
+							pauseOnHover
+							theme="colored"
+							bodyClassName="font-Estedad text-sm"
+							transition={Slide}
+						/>
+					</>
+				</MusicProvider>
+				<ReactQueryDevtools initialIsOpen={false} position="top-right" />
 			</Hydrate>
 		</QueryClientProvider>
 	);

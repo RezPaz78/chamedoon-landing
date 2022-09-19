@@ -8,6 +8,7 @@ import { HambergerMenu } from "iconsax-react";
 import { navLinks } from "constants/navLinks";
 import Footer from "@components/Layout/components/Footer";
 import { useRouter } from "next/router";
+import AudioPlayer from "@components/AudioPlayer";
 
 interface ILayoutProps {
 	children: React.ReactNode;
@@ -19,9 +20,9 @@ const Layout = ({ children }: ILayoutProps) => {
 	return (
 		<>
 			<Nav />
-			<div dir="rtl" className="containermin-h-screen">
-				<div>{children}</div>
 
+			<div dir="rtl" className="container relative ">
+				<div className="max-h-[90%]">{children}</div>
 				<Footer />
 			</div>
 		</>
