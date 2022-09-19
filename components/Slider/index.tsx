@@ -5,7 +5,7 @@ import { useSliderQuery } from "./api";
 import { useEffect } from "react";
 // / Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Mousewheel, Scrollbar } from "swiper";
 import { MovieAds } from "@components/Ads";
 import PlyrComponent from "@components/Player";
 import SliderPlayer from "@components/Player/SliderPlayer";
@@ -39,7 +39,10 @@ const Slider = (/* props: ISliderProps */) => {
 				<Loading />
 			) : data ? (
 				<Swiper
-					modules={[Autoplay]}
+					modules={[Autoplay, Mousewheel, Scrollbar]}
+					mousewheel={true}
+					grabCursor={true}
+					cssMode={true}
 					className="w-full "
 					autoplay={{ delay: 2000 }}
 					slidesPerView={1.15}
@@ -53,7 +56,7 @@ const Slider = (/* props: ISliderProps */) => {
 					{data.map((item) => (
 						<SwiperSlide key={item.id}>
 							{item.type === "Ad" && <MovieAds src={item.link} />}
-							{item.type === "Video" && item.link && (
+							{(item.type === "Video" || item.type === "Song") && item.link && (
 								<SliderPlayer image={item.image} src={item.link} />
 							)}
 						</SwiperSlide>
