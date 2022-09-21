@@ -28,10 +28,10 @@ const Home: NextPage = () => {
 			<section id="playlists" className="flex flex-col items-start p-5 pt-12">
 				<Playlists />
 			</section>
-			<section id="Beautiful_Isfahan" className="flex flex-col items-start bg-secondary">
+			<section id="Isfahan_Voice" className="flex flex-col items-start bg-secondary">
 				<IsfVoice />
 			</section>
-			<section id="playlists" className="flex flex-col items-start p-5 pt-12">
+			<section id="Podcasts" className="flex flex-col items-start p-5 pt-12">
 				<Podcasts />
 			</section>
 		</>

@@ -1,55 +1,64 @@
 import AudioPlayer from "@components/AudioPlayer";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 
-type Action = { type: "increment" } | { type: "decrement" };
+type State = { playList: string[]; played: string[] };
+type Action = { type: "SET"; payload: State } | { type: "UNSET" };
 type Dispatch = (action: Action) => void;
-type State = { count: number };
 type MusicProviderProps = { children: React.ReactNode };
 
-const CountStateContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(
+const MusicPlayerContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(
 	undefined,
 );
 
-function countReducer(state: State, action: Action) {
+function playerReducer<T>(state: State, action: Action): State {
 	switch (action.type) {
-		case "increment": {
-			return { count: state.count + 1 };
+		case "SET": {
+			return { ...action.payload };
+		}
+		case "UNSET": {
+			return { playList: [], played: [] } as State;
 		}
 		default: {
-			throw new Error(`Unhandled action type: ${action.type}`);
+			throw new Error(`Unhandled action type: ${action}`);
 		}
 	}
 }
 
+const defaultValue: State = { playList: [], played: [] };
+
 function MusicProvider({ children }: MusicProviderProps) {
-	const [state, dispatch] = useReducer(countReducer, { count: 0 });
+	const [state, dispatch] = useReducer(playerReducer, defaultValue);
 	// NOTE: you *might* need to memoize this value
 	// Learn more in http://kcd.im/optimize-context
+
 	const value = { state, dispatch };
 	return (
-		<CountStateContext.Provider value={value}>
+		<MusicPlayerContext.Provider value={value}>
 			{children}
-			<AudioPlayer
-				style={{
-					"--plyr-color-main": "#FFCB05",
-					"--plyr-audio-controls-background": "rgb(18, 18, 23)",
-					"--plyr-audio-control-color": "#fff",
-				}}
-				src={"http://37.32.28.207/files/isfmusic/Delkhoshi.mp3"}
-				options={{ hideControls: true, clickToPlay: true }}
-				className="fixed bottom-0 z-10 w-full"
-			/>
-		</CountStateContext.Provider>
+
+			{state.playList.length > 0 && (
+				<div className="fixed bottom-0 w-full">
+					<AudioPlayer
+						style={{
+							"--plyr-color-main": "#FFCB05",
+							"--plyr-audio-controls-background": "rgb(18, 18, 23)",
+							"--plyr-audio-control-color": "#fff",
+						}}
+						src={state.playList[0]}
+						options={{ hideControls: true, clickToPlay: true }}
+					/>
+				</div>
+			)}
+		</MusicPlayerContext.Provider>
 	);
 }
 
-function useCount() {
-	const context = useContext(CountStateContext);
+function useMusicPlayer() {
+	const context = useContext(MusicPlayerContext);
 	if (context === undefined) {
 		throw new Error("useCount must be used within a MusicProvider");
 	}
 	return context;
 }
 
-export { MusicProvider, useCount };
+export { MusicProvider, useMusicPlayer };

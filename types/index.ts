@@ -10,8 +10,9 @@ export interface IVideo {
 	id: number;
 	image: string;
 	link: string | null;
-	is_ad: boolean;
+	is_ad: string;
 }
+export type IVideoGenres = "iranian" | "foreign" | "animation";
 
 export interface IPlaylist {
 	id: number;
@@ -65,3 +66,8 @@ export interface IBaseResponse<T> {
 }
 
 export type ISliderResponse = IBaseResponse<ISlider>;
+
+export type IVideoResponse = {
+	message: string;
+	data: { [key in IVideoGenres]: IVideo[] };
+};

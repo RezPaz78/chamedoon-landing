@@ -10,6 +10,7 @@ module.exports = {
 				secondary: {
 					DEFAULT: "#444444",
 				},
+				defaultbg: "rgb(18, 18, 23)",
 				brown: {
 					50: "#fdf8f6",
 					100: "#f2e8e5",

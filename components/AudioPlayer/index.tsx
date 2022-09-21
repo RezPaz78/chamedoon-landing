@@ -1,11 +1,11 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { APITypes, PlyrOptions } from "plyr-react";
-import AdvancedPlayer from "components/Player/AdvancedPlayer";
+import AdvancedPlayer from "components/AudioPlayer/AdvancedAudioPlayer";
+import { Next, Play, Previous } from "iconsax-react";
 
 const PlyrComponent = ({
 	src,
 	options,
-	className,
 	style,
 }: {
 	src: string;
@@ -19,6 +19,7 @@ const PlyrComponent = ({
 		iconUrl: "/plyrIcons.svg",
 		blankVideo: "/blank.mp4",
 		autopause: true,
+		controls: ["progress", "current-time", "mute", "volume"],
 	};
 
 	const plyrVideo = src ? (
@@ -34,10 +35,11 @@ const PlyrComponent = ({
 				],
 			}}
 			options={finalOptions}
+			className="w-full"
 		/>
 	) : null;
 
-	return <div className={className}>{plyrVideo}</div>;
+	return <div className="w-full">{plyrVideo}</div>;
 };
 
 export default PlyrComponent;

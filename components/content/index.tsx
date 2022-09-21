@@ -18,7 +18,7 @@ const Content = (props: IContentProps) => {
 				<PatternButton
 					className="box-border min-w-[130px] max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
 					icon={VoiceCricle}
-					link="#top-slider"
+					link="#Isfahan_Voice"
 					text="صدای شهر"
 				/>
 				<PatternButton
@@ -30,7 +30,7 @@ const Content = (props: IContentProps) => {
 				<PatternButton
 					className="box-border min-w-[130px] max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
 					icon={Calendar}
-					link="#top-slider"
+					link="#city_events"
 					text="رویدادهای شهر"
 				/>
 			</div>
