@@ -49,7 +49,7 @@ const Playlists = (/* props: IPlaylistsProps */) => {
 				<p className=" font-IRANSans text-base font-bold text-white ">لیست‌های پخش</p>
 			</h3>
 			{/* a playlist Item */}
-			<div className="mt-2 flex w-full flex-col items-center justify-center rounded-2xl bg-[#1F1F28] py-5 [&>*]:shadow-lg ">
+			<div className="mt-2 flex w-full flex-col items-center justify-center space-y-4 rounded-2xl bg-[#1F1F28] py-5 [&>*]:shadow-lg ">
 				{isLoading ? (
 					<Loading />
 				) : data ? (
