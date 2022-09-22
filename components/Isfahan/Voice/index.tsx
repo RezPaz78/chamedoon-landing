@@ -34,7 +34,7 @@ const ISFVoice = (/* props: IISFVoiceProps */) => {
 		<>
 			<div className="flex w-full flex-col  ">
 				<Pattern className="justify-self-center px-5" />
-				<h3 className=" m-1 mx-5 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
+				<h3 className=" m-1 mx-5 flex  items-center justify-start rounded-lg  font-bold  text-chamedoon [&>*]:ml-3">
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">صدای شهر</p>
 				</h3>
