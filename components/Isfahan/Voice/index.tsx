@@ -17,14 +17,7 @@ const VoiceItem = ({ data, src }: { data: string; src: string }) => {
 	};
 	return (
 		<div className="  [&>*]:rounded-lg ">
-			<Image
-				placeholder="blur"
-				alt="movies"
-				src={voiceDummy}
-				layout="fill"
-				objectFit="fill"
-				quality={100}
-			/>
+			<Image alt="صدای شهر" src={src} layout="fill" objectFit="fill" quality={100} />
 			<VideoCircle
 				onClick={handlePlay}
 				variant="Bulk"
@@ -43,7 +36,7 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 				<Pattern className="justify-self-center" />
 				<h3 className=" m-1 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
 					<VideoHorizontal variant="Bold" />
-					<p className=" font-IRANSans text-base font-bold text-white ">اصفهان زیبا</p>
+					<p className=" font-IRANSans text-base font-bold text-white ">صدای شهر</p>
 				</h3>
 				{/* a single Movie or Item */}
 
