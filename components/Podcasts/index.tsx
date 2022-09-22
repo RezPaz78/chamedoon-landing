@@ -60,7 +60,7 @@ const Podcasts = (/* props: IPodcastsProps */) => {
 	const { data, isLoading } = usePodcasts();
 	return (
 		<>
-			<h3 className=" m-1 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
+			<h3 className="  m-1  flex  items-center justify-start rounded-lg  font-bold  text-chamedoon [&>*]:ml-3">
 				<Microphone2 variant="Bold" />
 				<p className=" font-IRANSans text-base font-bold text-white ">پادکست ها</p>
 			</h3>

@@ -43,7 +43,7 @@ const ISFEvent = (/* props: IISFEventProps */) => {
 				{isLoading ? (
 					<Loading />
 				) : data ? (
-					<div className="mt-5 mr-2 w-full">
+					<div className="mt-5 mr-5 w-full">
 						<Swiper
 							modules={[Autoplay]}
 							autoplay={{ delay: 3000 }}

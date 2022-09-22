@@ -81,3 +81,4 @@ export type ISFEventResponse = IBaseResponse<ISFEvent>;
 export type IPlayListResponse = IBaseResponse<IPlaylist>;
 
 export type IPodcastResponse = IBaseResponse<IPodcast>;
+export type IBookResponse = IBaseResponse<IBook>;

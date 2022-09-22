@@ -11,6 +11,7 @@ import IsfVoice from "@components/Isfahan/Voice";
 import Podcasts from "@components/Podcasts";
 import Slider from "@components/Slider";
 import ISFEvent from "@components/Isfahan/Events";
+import Books from "@components/Books";
 
 const Home: NextPage = () => {
 	return (
@@ -39,6 +40,9 @@ const Home: NextPage = () => {
 			</section>
 			<section id="Isfahan_Voice" className="flex flex-col items-start bg-secondary [&>*]:z-0">
 				<ISFEvent />
+			</section>
+			<section id="Podcasts" className="[&>*]:z-02 flex flex-col items-start p-5 pt-12">
+				<Books />
 			</section>
 		</>
 	);

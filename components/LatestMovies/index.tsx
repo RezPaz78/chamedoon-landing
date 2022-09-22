@@ -30,7 +30,7 @@ const LatestMovies = (/* props: ILatestMoviesProps */) => {
 			{isLoading ? (
 				<Loading />
 			) : (
-				<h3 className=" m-1 flex w-36 items-center justify-between  rounded-lg  font-bold text-chamedoon">
+				<h3 className="  m-1  flex  items-center justify-start rounded-lg  font-bold  text-chamedoon [&>*]:ml-3">
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">جدیدترین فیلم‌ها</p>
 				</h3>
