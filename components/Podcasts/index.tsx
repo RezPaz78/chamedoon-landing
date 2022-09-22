@@ -27,9 +27,9 @@ const Podcast = (props: IPodcast) => {
 			}}
 			className=" mt-5 box-border grid  aspect-video w-full grid-cols-2 grid-rows-2  justify-center  gap-6 overflow-hidden rounded-xl p-5 font-IRANSans text-white [&>*]:text-lg ">
 			<div className="max-w-prose break-normal  text-sm font-bold ">{props.name}</div>
-			<div className="flex flex-col justify-end  [&>*]:text-xl">
-				<span className="text-sm font-normal text-opacity-70">کانال:</span>
-				<span className="text-sm font-normal text-chamedoon">{props.channel}</span>
+			<div className="flex flex-col justify-end   font-medium">
+				<span className="text-sm text-white text-opacity-70">کانال:</span>
+				<span className="text-sm  text-chamedoon">{props.channel}</span>
 			</div>
 			<div className="  col-start-1 row-start-1  row-end-3 flex rounded-lg ">
 				<div className="relative aspect-square h-full w-full [&>*]:rounded-lg">
