@@ -2,15 +2,15 @@
 import { Transition } from "@headlessui/react";
 import { useMusicPlayer } from "context/musicPlayer";
 import { Next, Pause, Play, Previous } from "iconsax-react";
-import { APITypes, PlyrInstance, PlyrProps, usePlyr } from "plyr-react";
-import { forwardRef, useEffect, useState } from "react";
+import { PlyrEvent } from "plyr";
+import { APITypes, PlyrProps, usePlyr } from "plyr-react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 const AdvancedAudioPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 	const { source, options = null } = props;
 	const raptorRef = usePlyr(ref, { options, source });
 	const [player, setPlayer] = useState<APITypes["plyr"]>();
 	const [isPlaying, setIsPlaying] = useState(false);
 	const { state, dispatch } = useMusicPlayer();
-
 	// Do all api access here, it is guaranteed to be called with the latest plyr instance
 	useEffect(() => {
 		/**
@@ -25,11 +25,11 @@ const AdvancedAudioPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 		current?.plyr && setPlayer(current.plyr);
 		localStorage.setItem("players", "{}");
 		const api = current.plyr;
-
-		// });
-		api.on("playing", (e: any) => {
+		// TODO do we even need a type though ?
+		type ICustomPlyrEvent = PlyrEvent & { detail: { plyr: { id?: string } } };
+		api.on("playing", (e: ICustomPlyrEvent) => {
 			const players = JSON.parse(localStorage.getItem("players") ?? "{}");
-			const current = e.detail.plyr.id;
+			const current = e.detail.plyr?.id ?? "noId"; // just to please ts
 			players[current] = true;
 
 			const playerList = document.getElementsByClassName("plyr");
@@ -49,7 +49,11 @@ const AdvancedAudioPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 			}
 			localStorage.setItem("players", JSON.stringify(players));
 		});
-		// api.on("ready", (e: any) => {});
+		api.on("ready", async () => {
+			// sets auto play
+			await api.play();
+			setIsPlaying(api.playing);
+		});
 	});
 
 	const handlePauseAndPlay = () => {
@@ -111,11 +115,7 @@ const AdvancedAudioPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 					className={`h-8 w-8 fill-current text-chamedoon ${!hasNext && "opacity-30"}`}
 				/>
 			</div>
-			<video
-				style={props.style}
-				ref={raptorRef as React.MutableRefObject<HTMLVideoElement>}
-				className={`plyr-react plyr `}
-			/>
+			<video style={props.style} ref={raptorRef} className={`plyr-react plyr `} />
 		</div>
 	);
 });
