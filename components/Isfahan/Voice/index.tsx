@@ -27,7 +27,7 @@ const VoiceItem = ({ data, src }: { data: string; src: string }) => {
 	);
 };
 
-const IsfBeauty = (/* props: IIsfBeautyProps */) => {
+const ISFVoice = (/* props: IISFVoiceProps */) => {
 	const { data, isLoading } = useISFSong();
 
 	return (
@@ -76,4 +76,4 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 	);
 };
 
-export default IsfBeauty;
+export default ISFVoice;
