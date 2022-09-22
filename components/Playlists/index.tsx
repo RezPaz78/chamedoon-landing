@@ -55,9 +55,9 @@ const Playlists = (/* props: IPlaylistsProps */) => {
 				) : data ? (
 					data.map((item) =>
 						makeBoolean(item.is_ad) ? (
-							<PlaylistAd src={item.image_link} />
+							<PlaylistAd key={item.id} src={item.image_link} />
 						) : (
-							<PlayListItem src={item.image_link} data={item.songs} />
+							<PlayListItem key={item.id} src={item.image_link} data={item.songs} />
 						),
 					)
 				) : (
