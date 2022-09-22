@@ -32,9 +32,9 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 
 	return (
 		<>
-			<div className="flex w-full flex-col  px-5">
-				<Pattern className="justify-self-center" />
-				<h3 className=" m-1 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
+			<div className="flex w-full flex-col  ">
+				<Pattern className="justify-self-center px-5" />
+				<h3 className=" m-1 mx-5 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">صدای شهر</p>
 				</h3>
@@ -43,29 +43,30 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 				{isLoading ? (
 					<Loading />
 				) : data ? (
-					<Swiper
-						modules={[Autoplay]}
-						className="mt-5 w-full"
-						autoplay={{ delay: 3000 }}
-						slidesPerView={1.6}
-						spaceBetween={20}
-						centeredSlides={false}
-						loop={true}
-						// onLoopFix={() => console.log("loop fix")}
-						// onSlideChange={() => console.log("slide change")}
-						// onSwiper={(swiper) => console.log(swiper)}
-					>
-						{data.map(
-							(item) =>
-								item.link && (
-									<SwiperSlide
-										className="relative mt-5 aspect-square w-1/2   items-center justify-center rounded-lg  shadow-lg"
-										key={item.id}>
-										<VoiceItem data={item.link} src={item.image} />
-									</SwiperSlide>
-								),
-						)}
-					</Swiper>
+					<div className="mt-5 w-full pr-5">
+						<Swiper
+							modules={[Autoplay]}
+							autoplay={{ delay: 3000 }}
+							slidesPerView={1.6}
+							spaceBetween={20}
+							centeredSlides={false}
+							loop={true}
+							// onLoopFix={() => console.log("loop fix")}
+							// onSlideChange={() => console.log("slide change")}
+							// onSwiper={(swiper) => console.log(swiper)}
+						>
+							{data.map(
+								(item) =>
+									item.link && (
+										<SwiperSlide
+											className="relative mt-5 aspect-square w-1/2   items-center justify-center rounded-lg  shadow-lg"
+											key={item.id}>
+											<VoiceItem data={item.link} src={item.image} />
+										</SwiperSlide>
+									),
+							)}
+						</Swiper>
+					</div>
 				) : (
 					"مشکلی پیش آمده است"
 				)}

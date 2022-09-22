@@ -17,7 +17,7 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 	return (
 		<>
 			<div className="flex w-full flex-col ">
-				<Pattern className="justify-self-center px-5" />
+				<Pattern className="justify-self-center " />
 				<h3 className=" m-1 mx-5 flex w-28 items-center justify-between  rounded-lg  font-bold text-chamedoon">
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">اصفهان زیبا</p>
