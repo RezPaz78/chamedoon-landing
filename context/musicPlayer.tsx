@@ -35,19 +35,23 @@ function MusicProvider({ children }: MusicProviderProps) {
 	const value = { state, dispatch };
 	return (
 		<MusicPlayerContext.Provider value={value}>
-			<div className="[&>*]:z-10">{children}</div>
-			{state.playList.length > 0 && (
-				<AudioPlayer
-					style={{
-						"--plyr-color-main": "#FFCB05",
-						"--plyr-audio-controls-background": "rgb(18, 18, 23)",
-						"--plyr-audio-control-color": "#fff",
-					}}
-					src={state.playList[0]}
-					options={{ hideControls: true, clickToPlay: true }}
-					className="fixed bottom-0 left-0 right-0 z-[99999] w-full"
-				/>
-			)}
+			<div id="content" className="relative">
+				{children}
+				{state.playList.length > 0 && (
+					// BUG tailwind style won't apply sometimes
+					<div style={{ bottom: "0px", left: "0px", width: "100%", position: "fixed" }}>
+						<AudioPlayer
+							style={{
+								"--plyr-color-main": "#FFCB05",
+								"--plyr-audio-controls-background": "rgb(18, 18, 23)",
+								"--plyr-audio-control-color": "#fff",
+							}}
+							src={"http://37.32.28.207/files/isfmusic/Khodahafez.mp3"}
+							options={{ hideControls: true, clickToPlay: true }}
+						/>
+					</div>
+				)}
+			</div>
 		</MusicPlayerContext.Provider>
 	);
 }

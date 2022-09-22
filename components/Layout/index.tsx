@@ -19,7 +19,7 @@ const Layout = ({ children }: ILayoutProps) => {
 	const router = useRouter();
 
 	return (
-		<div dir="rtl" className="container relative ">
+		<div dir="rtl" className="relative">
 			<Nav />
 			<div className="max-h-[90%]">{children}</div>
 			<Footer />
