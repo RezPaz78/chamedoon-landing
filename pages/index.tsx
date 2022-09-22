@@ -19,13 +19,15 @@ const Home: NextPage = () => {
 				<Slider />
 			</section>
 			<Content className="[&>*]:z-0" />
-			<section id="movies" className="flex flex-col items-start p-5 [&>*]:z-0">
+			<section id="movies" className="flex flex-col items-start p-5 pl-0 [&>*]:z-0">
 				<LatestMovies />
 			</section>
-			<section id="Beautiful_Isfahan" className="flex flex-col items-start bg-secondary [&>*]:z-0">
+			<section
+				id="Beautiful_Isfahan"
+				className="flex flex-col  items-start  bg-secondary  [&>*]:z-0">
 				<IsfBeauty />
 			</section>
-			<section id="playlists" className="flex flex-col items-start p-5 pt-12 [&>*]:z-0">
+			<section id="playlists" className="flex flex-col items-start p-5  pt-12 [&>*]:z-0">
 				<Playlists />
 			</section>
 			<section id="Isfahan_Voice" className="flex flex-col items-start bg-secondary [&>*]:z-0">
