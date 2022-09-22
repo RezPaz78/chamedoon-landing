@@ -21,6 +21,7 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 		// });
 		api.on("playing", (e: any) => {
 			const currentPlayer = e.detail.plyr as PlyrInstance;
+			currentPlayer.fullscreen.enter();
 			const players = JSON.parse(localStorage.getItem("players") ?? "{}");
 			const current = e.detail.plyr.id;
 			players[current] = true;
@@ -41,7 +42,6 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 				}
 			}
 			localStorage.setItem("players", JSON.stringify(players));
-			currentPlayer.fullscreen.enter();
 		});
 
 		// player style for fullscreen

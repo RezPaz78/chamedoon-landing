@@ -21,12 +21,7 @@ const PlaySong = ({ data, src }: { data: string[]; src: string }) => {
 	const handlePlay = () => {
 		dispatch({ type: "SET", payload: { played: [], playList: data } });
 	};
-	console.log(
-		`%c c =>`,
-		"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
-		data,
-		src,
-	);
+
 	return (
 		<div
 			onClick={handlePlay}
@@ -60,18 +55,7 @@ const Slider = (/* props: ISliderProps */) => {
 						<SwiperSlide key={item.id}>
 							{item.type === "Ad" && <MovieAds src={item.link} />}
 							{item.type === "Song" && item.link && (
-								<PlaySong
-									data={[
-										item.link,
-										item.link,
-										item.link,
-										item.link,
-										item.link,
-										item.link,
-										item.link,
-									]}
-									src={item.image}
-								/>
+								<PlaySong data={[item.link]} src={item.image} />
 							)}
 							{item.type === "Video" && item.link && (
 								<SliderPlayer image={item.image} src={item.link} />

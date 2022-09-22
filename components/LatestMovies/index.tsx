@@ -24,12 +24,6 @@ const LatestMovies = (/* props: ILatestMoviesProps */) => {
 			setForiegn(data.foreign);
 			setKids(data.animation);
 		}
-		const x = irani.map((item) => JSON.parse(item.is_ad.toLowerCase()));
-		console.log(
-			`%c s =>`,
-			"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
-			x,
-		);
 	}, [data, isLoading]);
 	return (
 		<>

@@ -2,10 +2,24 @@ import ISFDummy1 from "assets/images/ISFDummy1.png";
 import Image from "next/image";
 import { Play, VideoCircle, VideoHorizontal } from "iconsax-react";
 import Pattern from "assets/Icons/Pattern.svg";
+import { useISFVideQuery } from "../api";
+import { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+import ISFVideoPlayer from "@components/Player/ISFVideoPlayer";
 // export interface ILatestMoviesProps {
 
 // }
 const IsfBeauty = (/* props: IIsfBeautyProps */) => {
+	const { data, isLoading } = useISFVideQuery();
+	useEffect(() => {
+		console.log(
+			`%c data,isLoading =>`,
+			"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
+			data,
+			isLoading,
+		);
+	}, [data, isLoading]);
 	return (
 		<>
 			<div className="flex w-full flex-col  px-5">
@@ -14,22 +28,33 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">اصفهان زیبا</p>
 				</h3>
-				{/* a single Movie or Item */}
-				<div className="relative mt-5 aspect-square w-1/2   items-center justify-center rounded-lg  shadow-lg  [&>*]:rounded-lg ">
-					<Image
-						placeholder="blur"
-						alt="movies"
-						src={ISFDummy1}
-						layout="fill"
-						objectFit="fill"
-						quality={100}
-					/>
-					<VideoCircle
-						variant="Bulk"
-						className=" absolute top-1/4 left-1/4 h-1/2 w-1/2  text-black [&>path+path]:text-chamedoon"
-					/>
-				</div>
-
+				{data ? (
+					<Swiper
+						modules={[Autoplay]}
+						className="mt-5 w-full"
+						autoplay={{ delay: 3000 }}
+						slidesPerView={1.9}
+						spaceBetween={20}
+						centeredSlides={false}
+						loop={true}
+						// onLoopFix={() => console.log("loop fix")}
+						// onSlideChange={() => console.log("slide change")}
+						// onSwiper={(swiper) => console.log(swiper)}
+					>
+						{data.map(
+							(item) =>
+								item.link && (
+									<SwiperSlide
+										className="relative flex  aspect-square  items-center justify-center rounded-lg shadow-lg [&>*]:rounded-lg "
+										key={item.id}>
+										<ISFVideoPlayer image={item.image} src={item.link} />
+									</SwiperSlide>
+								),
+						)}
+					</Swiper>
+				) : (
+					"مشکلی پیش آمده است"
+				)}
 				<Pattern className="rotate-180 justify-self-center pb-5" />
 			</div>
 		</>

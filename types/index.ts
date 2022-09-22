@@ -71,3 +71,5 @@ export type IVideoResponse = {
 	message: string;
 	data: { [key in IVideoGenres]: IVideo[] };
 };
+
+export type ISFVideoResponse = IBaseResponse<ISFVideo>;
