@@ -76,6 +76,8 @@ export type ISFVideoResponse = IBaseResponse<ISFVideo>;
 
 export type ISFVoiceResponse = IBaseResponse<ISFVoice>;
 
+export type ISFEventResponse = IBaseResponse<ISFEvent>;
+
 export type IPlayListResponse = IBaseResponse<IPlaylist>;
 
 export type IPodcastResponse = IBaseResponse<IPodcast>;

@@ -20,7 +20,7 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 				<Pattern className="justify-self-center " />
 				<h3 className=" m-1 mx-5 flex  items-center justify-start rounded-lg  font-bold  text-chamedoon [&>*]:ml-3">
 					<VideoHorizontal variant="Bold" />
-					<p className=" font-IRANSans text-base font-bold text-white ">اصفهان زیبا</p>
+					<p className=" font-IRANSans text-base font-bold  ">اصفهان زیبا</p>
 				</h3>
 				{isLoading ? (
 					<Loading />

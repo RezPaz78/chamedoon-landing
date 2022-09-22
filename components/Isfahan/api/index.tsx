@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { ISFVideoResponse, ISFVoiceResponse } from "types";
+import { ISFEventResponse, ISFVideoResponse, ISFVoiceResponse } from "types";
 import { axiosInstance } from "utils/axios";
 
 const getISFVideo = async (): Promise<ISFVideoResponse> => {
@@ -17,4 +17,12 @@ const getISFSong = async (): Promise<ISFVoiceResponse> => {
 
 export const useISFSong = () => {
 	return useQuery({ queryFn: getISFSong, queryKey: ["getISFSong"], select: (data) => data.data });
+};
+const getISFEvent = async (): Promise<ISFEventResponse> => {
+	const response = await axiosInstance.get("/isf/events");
+	return response.data;
+};
+
+export const useISFEvent = () => {
+	return useQuery({ queryFn: getISFEvent, queryKey: ["getISFEvent"], select: (data) => data.data });
 };
