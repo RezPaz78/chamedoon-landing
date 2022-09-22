@@ -25,9 +25,9 @@ const Podcast = (props: IPodcast) => {
 				backgroundBlendMode: "multiply",
 				backgroundColor: "#262630",
 			}}
-			className=" mt-5 box-border grid  aspect-video w-full grid-cols-2 grid-rows-2   justify-center gap-6 overflow-hidden rounded-xl p-5 font-IRANSans text-white ">
+			className=" mt-5 box-border grid  aspect-video w-full grid-cols-2 grid-rows-2  justify-center  gap-6 overflow-hidden rounded-xl p-5 font-IRANSans text-white [&>*]:text-lg ">
 			<div className="max-w-prose break-normal  text-sm font-bold ">{props.name}</div>
-			<div className="flex flex-col justify-end">
+			<div className="flex flex-col justify-end  [&>*]:text-xl">
 				<span className="text-sm font-normal text-opacity-70">کانال:</span>
 				<span className="text-sm font-normal text-chamedoon">{props.channel}</span>
 			</div>

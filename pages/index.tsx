@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 			<section id="Isfahan_Voice" className="flex flex-col items-start bg-secondary [&>*]:z-0">
 				<IsfVoice />
 			</section>
-			<section id="Podcasts" className="[&>*]:z-02 flex flex-col items-start p-5 pt-1">
+			<section id="Podcasts" className="[&>*]:z-02 flex flex-col items-start p-5 pt-12">
 				<Podcasts />
 			</section>
 		</>
