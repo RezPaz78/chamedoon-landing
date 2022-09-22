@@ -7,19 +7,13 @@ import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import ISFVideoPlayer from "@components/Player/ISFVideoPlayer";
+import Loading from "@components/Loading";
 // export interface ILatestMoviesProps {
 
 // }
 const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 	const { data, isLoading } = useISFVideQuery();
-	useEffect(() => {
-		console.log(
-			`%c data,isLoading =>`,
-			"background: #0dd0FF;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em",
-			data,
-			isLoading,
-		);
-	}, [data, isLoading]);
+
 	return (
 		<>
 			<div className="flex w-full flex-col  px-5">
@@ -28,7 +22,9 @@ const IsfBeauty = (/* props: IIsfBeautyProps */) => {
 					<VideoHorizontal variant="Bold" />
 					<p className=" font-IRANSans text-base font-bold text-white ">اصفهان زیبا</p>
 				</h3>
-				{data ? (
+				{isLoading ? (
+					<Loading />
+				) : data ? (
 					<Swiper
 						modules={[Autoplay]}
 						className="mt-5 w-full"

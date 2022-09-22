@@ -18,14 +18,14 @@ export interface IPlaylist {
 	id: number;
 	image_link: string;
 	songs: string[] | [];
-	is_ad: boolean;
+	is_ad: string;
 }
 
 export interface IPodcast {
 	id: number;
 	image: string;
 	link: string | null;
-	is_ad: boolean;
+	is_ad: string;
 	name: string;
 	channel: string;
 }
@@ -37,7 +37,7 @@ export interface IBook {
 	Publishers: string;
 	image: string;
 	link: string;
-	is_ad: boolean;
+	is_ad: string;
 }
 
 export interface ISFVideo {
@@ -73,3 +73,7 @@ export type IVideoResponse = {
 };
 
 export type ISFVideoResponse = IBaseResponse<ISFVideo>;
+
+export type ISFVoiceResponse = IBaseResponse<ISFVoice>;
+
+export type IPlayListResponse = IBaseResponse<IPlaylist>;
