@@ -12,7 +12,7 @@ const Content = (props: IContentProps) => {
 				<PatternButton
 					className="box-border min-w-[130px]  max-w-[200px] basis-5/12 md:max-w-min lg:max-w-xs lg:basis-1/5"
 					icon={VideoHorizontal}
-					link="#top-slider"
+					link="#Beautiful_Isfahan"
 					text="اصفهان زیبا"
 				/>
 				<PatternButton
