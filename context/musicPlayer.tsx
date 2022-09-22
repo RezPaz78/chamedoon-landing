@@ -1,4 +1,5 @@
 import AudioPlayer from "@components/AudioPlayer";
+import { Tenx } from "iconsax-react";
 import { createContext, useContext, useReducer, useState } from "react";
 
 type State = { playList: string[]; played: string[] };
@@ -34,20 +35,18 @@ function MusicProvider({ children }: MusicProviderProps) {
 	const value = { state, dispatch };
 	return (
 		<MusicPlayerContext.Provider value={value}>
-			{children}
-
+			<div className="[&>*]:z-10">{children}</div>
 			{state.playList.length > 0 && (
-				<div className="fixed bottom-0 w-full">
-					<AudioPlayer
-						style={{
-							"--plyr-color-main": "#FFCB05",
-							"--plyr-audio-controls-background": "rgb(18, 18, 23)",
-							"--plyr-audio-control-color": "#fff",
-						}}
-						src={state.playList[0]}
-						options={{ hideControls: true, clickToPlay: true }}
-					/>
-				</div>
+				<AudioPlayer
+					style={{
+						"--plyr-color-main": "#FFCB05",
+						"--plyr-audio-controls-background": "rgb(18, 18, 23)",
+						"--plyr-audio-control-color": "#fff",
+					}}
+					src={state.playList[0]}
+					options={{ hideControls: true, clickToPlay: true }}
+					className="fixed bottom-0 left-0 right-0 z-[99999] w-full"
+				/>
 			)}
 		</MusicPlayerContext.Provider>
 	);
@@ -56,7 +55,7 @@ function MusicProvider({ children }: MusicProviderProps) {
 function useMusicPlayer() {
 	const context = useContext(MusicPlayerContext);
 	if (context === undefined) {
-		throw new Error("useCount must be used within a MusicProvider");
+		throw new Error("useMusicPlayer must be used within a MusicProvider");
 	}
 	return context;
 }

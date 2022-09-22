@@ -7,6 +7,7 @@ const PlyrComponent = ({
 	src,
 	options,
 	style,
+	className,
 }: {
 	src: string;
 	options?: PlyrOptions;
@@ -35,11 +36,11 @@ const PlyrComponent = ({
 				],
 			}}
 			options={finalOptions}
-			className="w-full"
+			className={className}
 		/>
 	) : null;
 
-	return <div className="w-full">{plyrVideo}</div>;
+	return <div className={`w-full ${className}`}>{plyrVideo}</div>;
 };
 
 export default PlyrComponent;

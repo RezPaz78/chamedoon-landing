@@ -9,6 +9,7 @@ import { navLinks } from "constants/navLinks";
 import Footer from "@components/Layout/components/Footer";
 import { useRouter } from "next/router";
 import AudioPlayer from "@components/AudioPlayer";
+import { MusicProvider } from "context/musicPlayer";
 
 interface ILayoutProps {
 	children: React.ReactNode;
@@ -18,14 +19,11 @@ const Layout = ({ children }: ILayoutProps) => {
 	const router = useRouter();
 
 	return (
-		<>
+		<div dir="rtl" className="container relative ">
 			<Nav />
-
-			<div dir="rtl" className="container relative ">
-				<div className="max-h-[90%]">{children}</div>
-				<Footer />
-			</div>
-		</>
+			<div className="max-h-[90%]">{children}</div>
+			<Footer />
+		</div>
 	);
 };
 

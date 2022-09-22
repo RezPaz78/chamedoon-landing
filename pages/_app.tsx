@@ -13,7 +13,7 @@ import { MusicProvider } from "context/musicPlayer";
 
 // NO ssr wrapper
 import { MainNoSSR } from "components/MainNoSSR";
-import AudioPlayer from "@components/AudioPlayer";
+import { Tenx } from "iconsax-react";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -21,25 +21,26 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<QueryClientProvider client={queryClient}>
 				<Hydrate state={pageProps.dehydratedState}>
 					<MusicProvider>
-						<Layout>
-							<Component {...pageProps} />
-						</Layout>
+						<>
+							<Layout>
+								<Component {...pageProps} />
+							</Layout>
+							{/* <ToastContainer
+								position="bottom-left"
+								autoClose={5000}
+								hideProgressBar={false}
+								newestOnTop
+								closeOnClick
+								rtl
+								pauseOnFocusLoss
+								draggable
+								pauseOnHover
+								theme="colored"
+								bodyClassName="font-Estedad text-sm"
+								transition={Slide}
+							/> */}
+						</>
 					</MusicProvider>
-					<ToastContainer
-						position="bottom-left"
-						autoClose={5000}
-						hideProgressBar={false}
-						newestOnTop
-						closeOnClick
-						rtl
-						pauseOnFocusLoss
-						draggable
-						pauseOnHover
-						theme="colored"
-						bodyClassName="font-Estedad text-sm"
-						transition={Slide}
-					/>
-
 					<ReactQueryDevtools initialIsOpen={false} position="top-right" />
 				</Hydrate>
 			</QueryClientProvider>
