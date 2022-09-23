@@ -46,7 +46,7 @@ function MusicProvider({ children }: MusicProviderProps) {
 								"--plyr-audio-controls-background": "rgb(18, 18, 23)",
 								"--plyr-audio-control-color": "#fff",
 							}}
-							src={"http://37.32.28.207/files/isfmusic/Khodahafez.mp3"}
+							src={state.playList[0]}
 							options={{ hideControls: true, clickToPlay: true }}
 						/>
 					</div>
