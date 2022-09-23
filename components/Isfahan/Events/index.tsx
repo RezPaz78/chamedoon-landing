@@ -12,14 +12,14 @@ import { ISFEvent } from "types";
 
 const EventItem = (props: ISFEvent) => {
 	return (
-		<div className=" bg-blue flex aspect-[2/1] max-h-40 min-w-[250px] flex-col items-start justify-between space-y-2 rounded-lg  bg-[#2C2C2C] p-5 font-IRANSans">
+		<div className=" flex max-w-xs   flex-col items-start justify-between space-y-2 rounded-lg  bg-[#2C2C2C] p-5 font-IRANSans">
 			<h3 className="mb-5 text-xl font-bold text-chamedoon">{props.name}</h3>
-			<div className="flex pb-2">
+			<div className="flex pb-2 text-white opacity-70">
 				<Calendar variant="Linear" className="ml-3" />
 				<p>{props.date}</p>
 			</div>
 
-			<div className=" flex ">
+			<div className=" flex   text-white opacity-70">
 				<Location variant="Linear" className="ml-3" />
 				<p>{props.location}</p>
 			</div>
@@ -47,7 +47,7 @@ const ISFEvent = (/* props: IISFEventProps */) => {
 						<Swiper
 							modules={[Autoplay]}
 							autoplay={{ delay: 3000 }}
-							slidesPerView={1.6}
+							slidesPerView={1.4}
 							spaceBetween={20}
 							centeredSlides={false}
 							loop={true}

@@ -52,7 +52,7 @@ const Book = (props: IBook) => {
 
 const BookAd = ({ src }: { src: string }) => {
 	return (
-		<div className=" relative my-5 aspect-video w-full   justify-center overflow-hidden rounded-xl p-5 font-IRANSans text-white ">
+		<div className=" relative my-5 aspect-video w-full   justify-center overflow-hidden rounded-xl p-5 pb-0 font-IRANSans text-white ">
 			<Ad src={src} />
 			<p className=" absolute left-4 top-2 flex items-center justify-center rounded-lg bg-chamedoon p-1 px-2 text-center font-IRANSans text-xs font-semibold text-black">
 				تبلیغات
