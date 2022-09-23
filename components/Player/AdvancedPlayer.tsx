@@ -1,4 +1,4 @@
-import { APITypes, PlyrProps, usePlyr } from "plyr-react";
+import { APITypes, PlyrInstance, PlyrProps, usePlyr } from "plyr-react";
 import { forwardRef, useEffect } from "react";
 const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 	const { source, options = null } = props;
@@ -12,7 +12,7 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 		 * you can create the ref inside the component by yourself
 		 */
 		const { current } = ref as React.MutableRefObject<APITypes>;
-		if (current.plyr.source === null) {
+		if (current?.plyr?.source === null) {
 			return;
 		}
 		localStorage.setItem("players", "{}");
@@ -20,6 +20,8 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 
 		// });
 		api.on("playing", (e: any) => {
+			const currentPlayer = e.detail.plyr as PlyrInstance;
+			currentPlayer.fullscreen.enter();
 			const players = JSON.parse(localStorage.getItem("players") ?? "{}");
 			const current = e.detail.plyr.id;
 			players[current] = true;
@@ -40,6 +42,21 @@ const AdvancedPlayer = forwardRef<APITypes, PlyrProps>((props, ref) => {
 				}
 			}
 			localStorage.setItem("players", JSON.stringify(players));
+		});
+
+		// player style for fullscreen
+		const poster = document.querySelector<HTMLElement>(".plyr__poster");
+		api.on("exitfullscreen", (e) => {
+			const player = e.detail.plyr;
+			player.pause();
+			player.toggleControls(false);
+			poster && poster.style.setProperty("opacity", "1");
+			player.stop();
+		});
+		api.on("enterfullscreen", (e) => {
+			poster && poster.style.setProperty("opacity", "0");
+			const player = e.detail.plyr;
+			player.toggleControls(true);
 		});
 	});
 	return (

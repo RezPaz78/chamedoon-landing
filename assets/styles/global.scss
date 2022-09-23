@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "./fonts.scss";
+@import "swiper/css/bundle";
 
 * {
 	padding: 0;
@@ -11,5 +12,14 @@
 }
 
 body {
-	background-color: #212121;
+	background-color: rgb(18, 18, 23);
+}
+
+.plyr--video.plyr--stopped .plyr__controls {
+	display: none;
+}
+
+.plyr--full-ui.plyr--video .plyr__control--overlaid {
+	opacity: 0;
+	transform: scale(10);
 }
