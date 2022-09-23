@@ -10,14 +10,13 @@ interface INavButtonProps {
 
 const PatternButton = (props: INavButtonProps) => {
 	return (
-		<Link href={props.link}>
-			<a
-				style={{ backgroundImage: "url(/BtnPattern.svg)" }}
-				className={` m-2 flex items-center justify-between rounded-lg bg-[#444444]  p-3  font-bold text-chamedoon ${props.className}`}>
-				<span className=" font-IRANSans text-xs font-normal ">{props.text}</span>
-				<props.icon variant="Bold" />
-			</a>
-		</Link>
+		<a
+			href={props.link}
+			style={{ backgroundImage: "url(/BtnPattern.svg)" }}
+			className={` m-2 flex items-center justify-between rounded-lg bg-[#444444]  p-3  font-bold text-chamedoon ${props.className}`}>
+			<span className=" font-IRANSans text-xs font-normal ">{props.text}</span>
+			<props.icon variant="Bold" />
+		</a>
 	);
 };
 
