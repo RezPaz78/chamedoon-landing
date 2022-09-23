@@ -12,6 +12,7 @@ import Podcasts from "@components/Podcasts";
 import Slider from "@components/Slider";
 import ISFEvent from "@components/Isfahan/Events";
 import Books from "@components/Books";
+import City from "assets/Icons/City.svg";
 
 const Home: NextPage = () => {
 	return (
@@ -44,6 +45,8 @@ const Home: NextPage = () => {
 			<section id="Podcasts" className="[&>*]:z-02 flex flex-col items-start p-5 pt-12">
 				<Books />
 			</section>
+
+			<City alt="chamedoon" className="w-full bg-defaultbg pt-10 " />
 		</>
 	);
 };
