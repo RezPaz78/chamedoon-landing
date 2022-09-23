@@ -4,7 +4,7 @@ FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 ARG BASE_URL
-ENV BASE_URL="http://37.32.28.207/api/web/"
+ENV BASE_URL="http://37.32.28.207/api/v2/web/"
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN npm i 
@@ -21,7 +21,7 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 ARG BASE_URL
-ENV BASE_URL="http://37.32.28.207/api/web/"
+ENV BASE_URL="http://37.32.28.207/api/v2/web/"
 RUN npm run  build
 
 # If using npm comment out above and use below instead
@@ -33,7 +33,7 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ARG BASE_URL
-ENV BASE_URL="http://37.32.28.207/api/web/"
+ENV BASE_URL="http://37.32.28.207/api/v2/web/"
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
